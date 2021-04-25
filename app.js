@@ -21,10 +21,22 @@ app.post("/usuarios",(req,res)=>{
 
     usuarios.push({nome,sobrenome});
     return res.json({nome,sobrenome});
-
+})
+// http:localhost:3000/usuarios/rafa
+app.put("/usuarios/:nome",(req,res)=>{
+    const {nome}= req.params;
+    const {sobrenome} = req.body;
+    usuarios.filter( usuario => usuario.nome == nome).forEach( usuario => usuario.sobrenome = sobrenome);
+    return res.json({nome,sobrenome});
 })
 
+// http:localhost:3000/usuarios/rafa
+app.delete("/usuarios/:nome",(req,res)=>{
+    const {nome}= req.params;
+    usuarios.filter( usuario => usuario.nome == nome).delete({nome,sobrenome});
+    return res.json(usuarios);
+})
 //listen é para escutar o servidor
 app.listen(3000,()=> {
-    console.log('Servidor rodado!!!!!')
+    console.log('Servidor rodando!!!!!')
 })
