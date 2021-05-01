@@ -11,6 +11,9 @@
   "license": "ISC",
   "dependencies": {
     "express": "^4.17.1",
-    "nodemon": "^2.0.7"
+    "nodemon": "^2.0.7",
+    "uuid": "^8.3.2",
+    "uuid-v4": "^0.1.0",
+    "uuidv4": "^6.2.7"
   }
 }
